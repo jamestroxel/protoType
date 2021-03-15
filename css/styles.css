@@ -1,0 +1,276 @@
+body{
+  padding:0px;
+  margin:0px;
+  overflow-y: hidden;
+}
+.title{
+  font-family:"Univers LT W04_59 Ult Cond";
+  position:fixed;
+ margin-top:25%;
+ margin-bottom:25%;
+ margin-left:12.5px;
+ padding:0px;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  transform-origin: top left;
+}
+.nav1{
+  grid-column: 2 / span 3;
+  grid-row: 1;
+  /* width:100%; */
+  background: white;
+  /* position: fixed;
+  top:0; */
+  margin:0px;
+  height: 50px;
+  border-top:0px;
+  border-bottom:1px;
+  border-left:0px;
+  border-right:0px;
+  border-color: black;
+  border-style: solid;
+}
+.nav2{
+  grid-column: 6 / span 6;
+  grid-row: 1;
+  /* width:100%; */
+  background: white;
+  /* position: fixed;
+  top:0; */
+  margin:0px;
+  height: 50px;
+  border-top:0px;
+  border-bottom:1px;
+  border-left:0px;
+  border-right:0px;
+  border-color: black;
+  border-style: solid;
+}
+.prologue{
+  font-family:"Univers LT W04_59 Ult Cond";
+  grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    width: 400px;
+    padding-right: 10px;
+    padding-top: 0px;
+}
+.KvK{
+  font-family:"Univers LT W04_59 Ult Cond";
+  color: red;
+  grid-column-start: 6;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    width: 400px;
+    padding-right: 10px;
+    padding-top: 0px;
+}
+.moves{
+  display: flex;
+  /* align-content: flex-end; */
+  vertical-align: bottom;
+  align-items: flex-end;
+  /* text-align: end; */
+  width: 75px;
+  height: 20px;
+  font-family:"Univers LT W04_59 Ult Cond";
+  color: red;
+  background-color: white;
+  grid-column-start: 6;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    /* width: 400px; */
+    padding-right: 50px;
+    margin-top: 40px;
+    margin-right: 50px;
+    overflow-y:scroll;
+}
+.play{
+  font-family:"Univers LT W04_59 Ult Cond";
+  grid-column-start: 9;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    width: 400px;
+    padding-right: 10px;
+    padding-top: 0px;
+}
+h1{
+  font-family:"Univers LT W01_65 Bold1475968";
+  font-size: 2em;
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
+.story{
+  font-family:"Univers LT W01_55 Roman1475956";
+  font-size: 1em;
+  min-height: 0;
+  /* height: 100%; */
+  /* margin-bottom: 100%; */
+  overflow-y: scroll;
+}
+.story:last-child{
+  font-family:"Univers LT W01_55 Roman1475956";
+  font-size: 1em;
+  min-height: 0;
+  /* max-height: 100%; */
+  /* margin-bottom: 100%; */
+  overflow-y: scroll;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  justify-content: center; 
+  display: grid;
+  grid-template-columns: 50px 1fr 50px 400px 50px 200px 200px 50px 400px 50px 1fr 50px;
+  grid-template-rows: 50px 2fr 12.5px 75px 50px;
+  }
+  .item-a{
+    font-family:"Univers LT W01_55 Roman1475956";
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    width: 400px;
+    /* min-height: 0; */
+    padding-right: 10px;
+    padding-top: 25px;
+    overflow-y: scroll;
+    /* bottom: 150px; */
+    height: 100%;
+  }
+  .item-b{
+    grid-column-start: 6;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    width: 400px;
+    padding-top: 25px;
+    padding-right:0px;
+    margin: 0px;
+  }
+  .item-c{
+    grid-column-start:9;
+    grid-column-end: 9;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    width: 400px;
+    padding-top: 25px;
+  }
+  .bottom{
+    grid-column: 2 / span 10;
+    grid-row: 5;
+    /* width:100%; */
+    /* background: white;
+    position: absolute;
+    left:50px;
+    right: 50px; */
+    bottom:0;
+    margin:0px;
+    height: 50px;
+    max-height: 50px;
+    border-top:1px;
+    border-bottom:0px;
+    border-left:0px;
+    border-right:0px;
+    border-color: black;
+    border-style: solid;
+    /* overflow-y: hidden; */
+  }
+  .notationL{
+    display: flex;
+  justify-content: flex-start;
+  align-items: center;
+    grid-column: 6 ;
+    grid-row: 4;
+    width:200px;
+    background: white;
+    /* position: absolute; */
+    /* left:50px;
+    right: 50px; */
+    /* bottom:0; */
+    margin:0px;
+    height: 75px;
+    max-height: 75px;
+    border-top:1px;
+    border-bottom:0px;
+    border-left:0px;
+    border-right:1px;
+    border-color: black;
+    border-style: solid;
+    /* overflow-y: hidden; */
+  }
+  .notationR{
+    display: flex;
+  justify-content: flex-end;
+  align-items: center;
+    grid-column: 7 ;
+    grid-row: 4;
+    width:200px;
+    background: white;
+    /* position: absolute; */
+    /* left:50px;
+    right: 50px; */
+    /* bottom:0; */
+    margin:0px;
+    height: 75px;
+    max-height: 75px;
+    border-top:1px;
+    border-bottom:0px;
+    border-left:1px;
+    border-right:0px;
+    border-color: black;
+    border-style: solid;
+    /* overflow-y: hidden; */
+  }
+  .scoreL{
+    height: 12.5px;
+    width: 200px;
+    grid-column: 6 ;
+    grid-row: 3;
+    border-top:0px;
+    border-bottom:0px;
+    border-left:0px;
+    border-right:1px;
+    border-color: black;
+    border-style: solid;
+  }
+  .scoreR{
+    height: 12.5px;
+    width: 200px;
+    grid-column: 7 ;
+    grid-row: 3;
+    border-top:0px;
+    border-bottom:0px;
+    border-left:1px;
+    border-right:0px;
+    border-color: black;
+    border-style: solid;
+  }
+  .player{
+    font-family:"Univers LT W04_59 Ult Cond";
+    font-size: 3em;
+    text-transform: uppercase;
+    margin: 0px;
+  }
+  .form-horizontal{
+    height:0px;
+    overflow: hidden;
+  }
+  .barL{
+    transition: 2s;
+    transition-timing-function: ease-in-out;
+  }
+  .barR{
+    width: 200;
+    transition-property: width;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+  }

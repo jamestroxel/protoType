@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototypes</title>
+    <link rel="stylesheet" href="css/chessboard-0.3.0.min.css" />
+    <script src="scripts/jquery-1.10.1.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/chess.min.js"></script>
+    <script src="scripts/chessboard-0.3.0.min.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://unpkg.com/d3-sankey@0"></script>
+  <script type="text/javascript">
+    var MTUserId='2a41281a-a264-4144-a1d9-10d3aa44b7d4';
+    var MTFontIds = new Array();
+    MTFontIds.push("1475968"); // Univers® W01 65 Bold 
+    MTFontIds.push("1475956"); // Univers® W01 55 Roman 
+    MTFontIds.push("1571239"); // Univers® W04 59 Ultra Condensed 
+    (function() {
+        var mtTracking = document.createElement('script');
+        mtTracking.type='text/javascript';
+        mtTracking.async='true';
+        mtTracking.src='mtiFontTrackingCode.js';
+
+        (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtTracking);
+      })();
+  </script>
+  <style type="text/css">
+      @font-face{
+          font-family:"Univers LT W01_65 Bold1475968";
+          src:url("Fonts/1475968/8a711a0d-3f17-4bfe-887b-6229858332b3.woff2") format("woff2"),url("Fonts/1475968/05a79c4b-9e9d-46e4-9d4b-610be05371c4.woff") format("woff");
+      }
+      @font-face{
+          font-family:"Univers LT W01_55 Roman1475956";
+          src:url("Fonts/1475956/5c8d59c2-9c85-4a22-88e3-bf3fba01dcd8.woff2") format("woff2"),url("Fonts/1475956/fc51d03b-0d7d-45df-9415-3c6270c80749.woff") format("woff");
+      }
+      @font-face{
+        font-family:"Univers LT W04_59 Ult Cond";
+        src:url("Fonts/1571239/e3112381-ca77-4808-a019-8456920ba9b6.woff2") format("woff2"),url("Fonts/1571239/8972b150-d6ee-4582-add4-51c571e98b4f.woff") format("woff");
+      }
+  </style>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <p class="title">Chess, Patterns and Paranoia</p>
+  <div class="container">
+    <div class="nav1">
+    </div>
+    <p class="prologue">Prologue</p>
+    <div class="nav2"></div>
+    <p class="KvK">Karpov vs. Korchnoi</p>
+    <div id="pgn" class="moves">
+    </div>
+     
+    <p class="play">Play</p>
+    <div class="item-a">
+      <h1>Moscow 1974</h1>
+      <p class="story">
+        The contrast between the 1974 Candidate's Final and the 1978 World Chess Championship could not be higher. Game 2 of the 1974 match in Moscow has come to be regarded as a modern classic in tactics, strategy, and chess brilliance between two of the game's best. The absurdist theatre of the entire 1978 Championship instantly earned its reputation as a notorious example of the type of superstition, paranoia and scandal commonly observed in chess lore throughout the game's rich history. However, there are a few key similarities that will emerge as the focus of this paper that also carry broad implications for the way we extract meaning from information. The visualizations that accompany the game analysis are designed to help readers see chess in the same way that a grandmaster can, and in so doing, identify certain patterns between a grandmaster's state of mind and their own.        
+      </p>
+      <a id='CPp6laA6S0ldbSx2tFsSGg' class='gie-single' href='http://www.gettyimages.com/detail/82984865' target='_blank' style='color:#a7a7a7;text-decoration:none;font-weight:normal !important;border:none;display:inline-block;'>Embed from Getty Images</a><script>window.gie=window.gie||function(c){(gie.q=gie.q||[]).push(c)};gie(function(){gie.widgets.load({id:'CPp6laA6S0ldbSx2tFsSGg',sig:'pulX-8vD0MWwhmCOUqt0fOSyCf_iTh0VtTF_pUCzyOE=',w:'594px',h:'452px',items:'82984865',caption: true ,tld:'com',is360: false })});</script><script src='//embed-cdn.gettyimages.com/widgets.js' charset='utf-8' async></script>
+      <!-- <p class="story">
+        I will argue that in many ways, a grandmasters' heightened sensitivity to pattern recognition can be a two-way street. In 1974, we can observe that the quality of the games were the result of each player's singular ability to perceive threats on the board and respond to them. Meanwhile, the Championship in the Philippines is characterized by each player's preoccupation with threats, real or imagined, off of the board, and we should not be surprised to learn that few people today study these games to gain a better understanding of how to play chess. This is no better illustrated than by Karpov's own written account of the 1978 match, "From Baguio to Moreno." You could easily be fooled into thinking that this was told through the perspective of the loser while reading each grievance-filled page so concerned with perceived slights, settling of scores and foiled sub-plots, that the few instances of any game analysis read like footnotes. Is this sudden obsession with what is happening beyond the game due to boredom? Is this a natural progression once you have reached chess at this level? This paper will not attempt to answer that question but will attempt to both qualify and quantify the relationship between chess, pattern recognition and the pitfalls therein with supporting documentation from other historical accounts and written works on chess theory, statistics and cognitive psychology. 
+      </p>
+      <p class="story">
+        Among the documentation supporting this hypothesis will be a probabilistic study on the veracity of what may very well count as one of the least offensive conspiracies put forth in the last 30 years by Bobby Fischer, when the budding holocaust denier claimed that all of the games in the 1985 WCC were rigged. The only evidence provided by Fischer to support this claim was a sequence of 18 consecutive moves observed in the fourth game between Karpov and Kasparov, all of which happened to land on black-colored squares. From this, we will see further evidence that the relationship between the ability to see patterns and a proclivity for conspiracy theory is not limited to the unique dynamic between Karpov and Korchnoi, or any single set of circumstances in 1978. Chess trains you to be always one step ahead of every plot, sub-plot, feint, decoy, and other deceit. While the trick is to focus this energy on the 64 squares located within the boundaries of the chessboard, Segal shows us how easy it is for this attention to wander beyond the limits of both the chessboard and math. 
+      </p>
+      <p class="story">
+        We will also see a number of studies that analyze the effects of time pressure on chess skill and expert-level decision-making. Chess skill is widely understood to be split between fast pattern recognition processes and slow search processes. The hypothesis here being that when the time required to think 10-15 moves ahead is curtailed, pattern recognition remains the decisive factor in the outcome. While Harreveld, Wagenmakers and van der Maasand's research remains inconclusive about the precise role of pattern recognition in a fast-paced environment, their analysis does reveal that the strength of the relationship between chess skill and time increases as the length of the game decreases. This suggests that fast processes do play an outsized role in some way. Other studies show still-clearer evidence of the relationship between time and pattern recognition. In one such study, Sigman, Etchemendy, Slezak and Cecchi research the response times of each move in rapid chess games using highly precise data only made available in recent years through online chess engines. They also make an important note about chess played in its ideal form as a "state function," absent of any true codependencies, where choosing each move is based solely on the current board position. The crucial point being that humans are largely incapable of this kind of play, "rather, the existence of plans and schemes, the influence of previous thoughts and evaluations, the assessment of the opponent ability in deciding whether to gamble on a risky move, and in particular, the presence of a time constrain, are likely to be reflected in an interaction between successive moves."
+      </p>
+      <p class="story">
+        The question here of whether or not grandmaster level chess players rely on a high sensitivity to pattern recognition, and in what ways this can act for or against them, will be tested first with an in-depth account of the 1978 match. This analysis will consist almost entirely of qualitative data which will include photos, diagrams and textual data to try and accurately portray the often unquantifiable nature of this particular chess match.
+      </p>
+      <p class="story">
+        Following this, we will travel back to Game 2 of the 1974 Candidates match, which is divided naturally into three parts - the opening, middle game, and end game - in order to compare and contrast these two matches. This will feature Anatoly Karpov's annotations of each board position throughout, in addition to my own analysis and quantitative research to support the conclusion that there is a strong relationship between chess skill and pattern recognition that can be decisive when leveraged well, and counterproductive when this type of mental energy lacks focus. 
+      </p>
+      <p class="story">
+        As a final note, I feel it is my responsibility to point out that the intention here is not to diagnose all grandmaster-level chess players as somehow naturally "paranoid" or "crazy." Rather, the attempt is made to identify the type of skillset required to navigate a specific kind of environment, and to draw parallels between the ways that both the subjects of my research and the reading public manage this. The hope is that doing this may help shed light on the ways that we interpret data in today's condensed, 280-character socio-political climate, where the margin of error can feel razor sharp and victory is total. Are we under the same kind of pressure as a chess genius? Is this reasonable? And how can we respond to this?
+      </p>
+      <p class="story">
+        We begin the task of answering these questions by pointing out the most obvious link between these two very different events; the matchup between Anatoly Karpov and Viktor Korchnoi. In the 4 years between the two matches, Korchnoi has defected to Switzerland, and Karpov has, by default, been crowned World Champion after Bobby Fischer took issue with the rather conventional terms of the 1975 Championship match, and left chess for good. The veteran Korchnoi has won the opportunity to redeem himself against the young prodigy, and the long history between these two has reached a crescendo by 1978. 
+      </p> -->
+    </div>
+    <!-- <span class="h3" id="time1">0:05:00</span> -->
+      <div id="board" class="item-b" style="width: 400px"></div>
+      <!-- <span class="h3" id="time2">0:05:00</span> -->
+      <div id="sankey" class="item-c"></div>
+      <div class="scoreL">
+        <svg>
+          <rect id='barL'></rect>
+        </svg>
+      </div>
+      <div class="notationL">
+        <p class="player">
+          Karpov
+        </p>
+      </div>
+      <div class="scoreR">
+        <svg>
+          <rect id='barR'></rect>
+        </svg>
+      </div>
+      <div class="notationR">
+        <p class="player">
+          Korchnoi
+        </p>
+      </div>
+      <div class="bottom"></div>
+      <div id="engineStatus" class="form-horizontal">...</div>
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="timeBase" class="control-label">Base time (min)</label>
+              <div>
+                <input type="number" class="form-control" id="timeBase" value="5">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="timeInc" class="control-label">Increment (sec)</label>
+              <div>
+                <input type="number" class="form-control" id="timeInc" value="2">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="skillLevel" class="control-label">Skill Level (0-20)</label>
+              <div>
+                <input type="number" class="form-control" id="skillLevel" value="0">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="color" class="control-label">I play</label>
+              <div>
+                <div class="btn-group" data-toggle="buttons">
+                  <label class="btn btn-primary active" id="color-white"><input type="radio" name="color">White</label>
+                  <label class="btn btn-primary" id="color-black"><input type="radio" name="color">Black</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="showScore" class="control-label">Show score</label>
+              <div>
+                <input type="checkbox" class="form-control" id="showScore" checked>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="color" class="control-label"></label>
+              <div>
+                <button type="button" class="btn btn-primary" onclick="newGame()">New Game</button>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="color" class="control-label">Promote to</label>
+              <div>
+                <select id=promote>
+                  <option value=q selected>Queen</option>
+                  <option value=r>Rook</option>
+                  <option value=b>Bishop</option>
+                  <option value=n>Knight</option>
+                </select>
+              </div>
+            </div>
+          </form>
+              <h5 class="form-horizontal">Evaluation</h5>
+              <pre id=evaluation class="form-horizontal"></pre>
+      <script src="enginegame.js"></script>
+      <script>
+        var wait_for_script;
+        var newGame = function (){};
+        
+        /// We can load Stockfish.js via Web Workers or directly via a <script> tag.
+        /// Web Workers are better since they don't block the UI, but they are not always avaiable.
+        (function fix_workers()
+        {
+          var script_tag;
+          /// Does the environment support web workers?  If not, include stockfish.js directly.
+          ///NOTE: Since web workers don't work when a page is loaded from the local system, we have to fake it there too. (Take that security measures!)
+          if (!Worker || (location && location.protocol === "file:")) {
+            var script_tag  = document.createElement("script");
+            script_tag.type ="text/javascript";
+            script_tag.src  = "stockfish.asm.js";
+            script_tag.onload = init;
+            document.getElementsByTagName("head")[0].appendChild(script_tag);
+            wait_for_script = true;
+            setTimeout(function ()
+            {
+              console.warn("Loading this example from the file: protocol will load the slower asm.js engine.\nRun server.js and then load http://localhost:8080/ for the WASM engine.");
+            }, 3000);
+          }
+        }());
+        
+        function init()
+        {
+          var game = engineGame();
+      
+          newGame = function newGame() {
+              var baseTime = parseFloat($('#timeBase').val()) * 60;
+              var inc = parseFloat($('#timeInc').val());
+              var skill = parseInt($('#skillLevel').val());
+              game.reset();
+              game.setTime(baseTime, inc);
+              game.setSkillLevel(skill);
+              game.setPlayerColor($('#color-white').hasClass('active') ? 'white' : 'black');
+              game.setDisplayScore($('#showScore').is(':checked'));
+              game.start();
+          }
+          
+          game.setSkillLevel
+          
+          document.getElementById("skillLevel").addEventListener("change", function ()
+          {
+              game.setSkillLevel(parseInt(this.value, 10));
+          });
+      
+          newGame();
+        }
+        
+        /// If we load Stockfish.js via a <script> tag, we need to wait until it loads.
+        if (!wait_for_script) {
+          document.addEventListener("DOMContentLoaded", init);
+        }
+      </script>
+    <script src="scripts/sankey2.js"></script>
+</body>
+</html>
